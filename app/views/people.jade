@@ -1,0 +1,47 @@
+doctype html
+html
+	include includes/head.jade
+	script(src='/js/jquery.cookie.js')
+	script(src='/js/people.js')
+	script(src='/js/jquery-1.9.1.min.js')
+	script(src='/js/jquery.watermarkinput.js')
+	script(src='/js/bootstrap.min.js')
+	link(rel='stylesheet', href='/css/bootstrap.min.css')
+	title #{title}
+	body
+	include includes/navbar.jade
+	div.container
+		div#myself.search_item
+			div.row.user-row
+				div.col-xs-4.col-sm-4.col-md-5.col-lg-5
+					img(src="/img/green-dot.png" height=10)
+					br
+					img(src="/img/photo4.png" height=60)
+					form(action='/call', method='get')
+						button(type="submit" class="btn btn-sm hidden" id="callBtn") Answer
+				div.col-xs-6.col-sm-6.col-md-5.col-lg-5
+					br
+					img(src="/img/OK.png" height=30)#img_status
+					br
+					label
+						strong #{user_name}
+				div.col-xs-2.col-sm-2.col-md-2.col-lg-2
+					br
+					form(action='/myStatus', method='post')
+						select(id="myStatus", onchange="changeStatus()", class="ok", name="myStatus")
+							option(value="OK") OK
+							option(value="Help") Help
+							option(value="Emergency") Emergency
+							option(value="undefined") Undefined
+						br
+						br
+						button(type="submit" class="btn btn-sm" id="statusBtn") Update Status
+		form(action= '/startChats', method = 'post' id = 'chat_room')
+			input(type="hidden" name="submitclicked" value="")
+		div.well#participants_online
+		div.well#participants_offline
+		//
+			div.row
+				div.col-md-12.col-xs-12
+					h3.text-center.offline Offline
+					div.text-center#participants_offline

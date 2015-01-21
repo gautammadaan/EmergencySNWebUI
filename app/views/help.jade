@@ -1,0 +1,30 @@
+doctype html
+html
+	include includes/head.jade
+	script(src='/js/map.js')
+	title Help Page
+	body
+		include includes/navbar.jade
+		div.col-xs-6.col-sm-6.col-md-12.col-lg-12
+			br
+			br
+			a(href="/callList/fire")
+				strong Fire
+			br
+			br
+			a(href="/callList/medical")
+				strong Medical
+			br
+			br
+			a(href="/callList/accident")
+				strong Accident
+			br
+			br
+			a(href="/callList/breakin")
+				strong Break-in
+			br
+			br
+			a(href="/callList/earthquake")
+				strong Earthquake
+			br
+			br

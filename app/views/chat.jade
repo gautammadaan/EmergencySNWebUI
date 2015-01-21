@@ -1,0 +1,21 @@
+doctype html
+html
+	include includes/head.jade
+	script(src='/js/chat.js')
+	head
+	title Chat
+	body
+		include includes/navbar.jade
+		br
+		input(class = 'hidden' id = 'to_user'  value = to_user)
+		input(class = 'hidden' id = 'from_user'  value = user_name)
+		div.container-fluid
+			div.row-fluid
+				div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					form(action='/postChat', method='post')
+						input(type='text' class='form-control' name='chatInput' placeholder="What do you want to say")
+						input(class='form-control hidden' name = 'target_user' value = to_user)
+						br
+						button(type="submit" class="btn btn-sm" id="postChat") Send
+					br
+					div.well#chatList Chat with #{to_user}

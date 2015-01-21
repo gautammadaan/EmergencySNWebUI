@@ -1,0 +1,37 @@
+doctype html
+html
+  include includes/head.jade
+  script(src='/js/jquery.cookie.js')
+  link(rel='stylesheet', href='/css/style.css')
+  title SSNoC - Welcome
+  body
+    include includes/navbar.jade
+    div.container.text-center
+      br
+      h3 Welcome to Survivable Social Network on a Chip!!
+      br
+      h4 You can share status with others. The categories of status are the following:
+      br
+      table
+        tr
+          th Status
+          th Explanation
+          th Icon
+        tr
+          td OK
+          td I am OK, I do not need help.
+          td
+            img(src="/img/OK.png" height=30)
+        tr
+          td Help 
+          td I need help, but this is not a life threatening emergency.
+          td
+            img(src="/img/Help.png" height=30)
+        tr
+          td Emergency
+          td I need help now, as this is a life threatening emergency!!!
+          td
+            img(src="/img/Emergency.png" height=30)
+      br  
+      a.btn.btn-info(href='/people') Let's start
+      

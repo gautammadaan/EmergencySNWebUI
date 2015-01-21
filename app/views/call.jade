@@ -1,0 +1,15 @@
+doctype html
+html
+	include includes/head.jade
+	script(src='/js/call.js')
+	head
+	title Call
+	body
+		include includes/navbar.jade
+		div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			br
+			label.col-xs-offset-6.col-sm-offset-6
+				strong calling
+			br
+			div#videos
+				video(width="320" height="240" autoplay = "autoplay")#me

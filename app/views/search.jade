@@ -1,0 +1,57 @@
+doctype html
+html
+	include includes/head.jade
+	head
+		script(src='/js/search.js')
+	body
+	include includes/navbar.jade
+	div#main
+		div.container
+				h3.text-center
+					img(src="/img/search.png" height=60)
+					span    Look Up
+				br
+				div.row.text-center.col-sm-6.col-sm-offset-3
+					div.performance
+						form(action='/lookup', method='post')
+							div.form-group
+								select(name='option' onchange = 'change()' id='options')
+									option(value='user') Users with name
+									option(value='status') Users with status
+									option(value='pub_mesg') Public messages
+									option(value='announce') Announcements
+									option(value='chats') Private chats
+								br
+								br
+								input(type='text' class='form-control' hidden='hidden' name='search_text' id="search" placeholder="Enter search term..")
+								select(name='optionStatus' hidden='hidden' id = 'optionStatus')
+									option(value='OK' selected="selected") OK
+									option(value='Help') Help
+									option(value='Emergency') Emergency
+									option(value='Undefined') Undefined
+								br
+								button(type="submit" class="btn btn-info btn-lg") Go
+			div#search_results
+				if(users !== undefined)
+					- each result in users
+						div.row
+							div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+								label #{result}
+				if(messages !== undefined)
+					if(messages.length > 10)
+						button(type="submit" class"btn btn-info btn-lg") More
+					- each message in messages
+						- each val, key in message
+							if(key === "from_userName")
+								- sender = val					
+							else if(key === "message")
+								- message = val
+							else if(key === "message_timestamp")
+								- time = val
+							else
+								- location = val
+						div.row
+							div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+								label #{sender} on #{time}
+								br
+								label #{message}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>fse-F14-SB7-SSNoC-Node-UI</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>public/img/performance.png</name>
+			<type>1</type>
+			<location>/Users/gautammadaan/git/fse-F14-SB7-SSNoC-Node-UI/public/img/performance.png</location>
+		</link>
+	</linkedResources>
+</projectDescription>

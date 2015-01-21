@@ -1,0 +1,22 @@
+doctype html
+html
+	include includes/head.jade
+	script(src='/js/map.js')
+	body
+	include includes/navbar.jade
+	div#main
+		img(src="/img/nasa_map.png" height=664)
+		each val, key in participants
+			each val1, key1 in val
+				if (key1 == 'longitude')
+					- x = ((parseFloat(val1) + 122.064110)*664/0.0082)+100
+					- lx = x
+				if (key1 == 'latitude')
+					- y = ((parseFloat(val1) - 37.414534)*1283/(-0.00783))-90
+					- ly = y-22
+				if (key1 == 'userName')
+					- z = val1
+			figure
+				img(src = "/img/pin.png" height=20 style="position: absolute; top: "+y+"px; left: "+x+"px")
+				figcaption(style="position: absolute; top: "+ly+"px; left: "+lx+"px") #{z}
+			

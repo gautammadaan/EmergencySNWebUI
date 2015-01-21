@@ -1,0 +1,47 @@
+doctype html
+html
+	include includes/head.jade
+	head
+	body
+	include includes/navbar.jade
+	div#main
+		p
+			div.container
+				h3.text-center
+					img(src="/img/memory.png" height=60)
+					span    Measure Memory
+				br
+				div.text-center.col-sm-10.col-sm-offset-1
+					div.memory
+						p #{memStatus}
+						if (enableMemory == "True")
+							form(action='/startMemory', method='post')
+								button(type="submit" class="btn btn-success btn-lg" id="memoryBtn") Start Measurement
+								br
+								br
+							form(action='/stopMemory', method='post')
+								button(type="submit" class="btn btn-danger btn-lg" id="memoryBtn") Stop measurement
+								br
+								br
+							form(action='/getMemory', method='get')
+								button(type="submit" class="btn btn-info btn-lg" id="memoryBtn") Get results
+								
+							br
+							if (typeof memoryArray !== 'undefined')
+								h3
+									| MEMOERY MEASUREMENT RESULTS 
+								table
+									tr
+										td Time
+										td Used Volatile Memory(kB)
+										td Free Volatile Memory(kB)
+										td Used Non-Volatile Memory(kB)
+										td Free Non-Volatile Memory(kB)
+									each item in memoryArray
+										tr
+											td= item.createdAt
+											td= item.usedVolatile
+											td= item.freeVolatile
+											td= item.usedNonVolatile
+											td= item.freeNonVolatile
+					

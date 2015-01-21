@@ -1,0 +1,42 @@
+doctype html
+html
+	include includes/head.jade
+	head
+	body
+	include includes/navbar.jade
+	div#main
+		p
+			div.container
+					if(enable == "True")
+						h3.text-center
+							img(src="/img/performance.png" height=60)
+							span    Measure Performance
+					else if(coordinator == "True")
+						h3.text-center
+							img(src="/img/network.png" height=60)
+							span    Social Network Analysis
+					
+					br
+					div.text-center.col-sm-6.col-sm-offset-3
+						div.performance
+							p #{dbStatus}
+						if(enable == "True")
+							form(action='/sysperf', method='post')
+								div.form-group
+									input.name(type='number' class='form-control' name='duration' id="performance" placeholder="Please enter the duration of test in seconds")
+								button(type="submit" class="btn btn-info btn-lg" id="performanceBtn") Measure performance
+							br
+							p Result: Post/sec: #{post_perf}, Get/sec: #{get_perf}
+					
+						if(coordinator === "True")
+							form(action='/snAnalyze', method='post')
+								div.form-group
+									input.name(type='number' class='form-control' name='snaDuration' id="durSna" placeholder="Enter time window in 'hours' for the analysis")
+									br
+									button(type="submit" class="btn btn-info btn-lg" id="snaButton") Analyze Network
+				div#search_results
+					if( results !== undefined && results !== "")
+						- each result in results
+							div.row
+								div.col-xs-12.col-sm-12.col-md-12.col-lg-12
+									label #{result.userNames}

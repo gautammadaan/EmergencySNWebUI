@@ -1,0 +1,27 @@
+doctype html
+html
+	include includes/head.jade
+	script(src='/js/callList.js')
+	title Help Page
+	body
+		include includes/navbar.jade
+		br
+		br
+		div.container
+			- each participant in participants
+				if(participant.userName != user && participant.profession != undefined && participant.profession != 'Other')
+					div.row.user-row
+						div.col-xs-5.col-sm-5.col-md-5.col-lg-5
+							label
+								strong #{participant.userName}
+						div.col-xs-5.col-sm-5.col-md-5.col-lg-5
+							label
+								strong #{participant.profession}
+						div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+							form(action= '/startChats', method='post' id='chat_room')
+								input(type="hidden" name="submitclicked" value=participant.userName)
+							button(class="submit btn" form="chat_room") Message
+						div.col-xs-1.col-sm-1.col-md-1.col-lg-1
+							form(action='/postCall', method='post' id="call")
+								input(type="hidden" name="submitclicked" value=participant.userName)
+							button(class="submit btn" form="call") Call

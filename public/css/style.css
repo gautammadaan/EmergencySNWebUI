@@ -1,0 +1,245 @@
+body {
+  padding-top:50px;
+  font-size:1.7em;
+}
+.main-body {
+  padding-bottom:50px;
+}
+#top-navbar{
+  min-height:50px;
+}
+.nav > li >a{
+  height:60px;
+  padding-top:15px;
+}
+
+.ok, .emergency, .assistance {
+  color: white !important;
+}
+.status_item.ok:hover, .status_item.emergency:hover, .status_item.assistance:hover {
+  color: black !important;
+}
+
+.ok {
+  background: #5cb85c;
+}
+.emergency{
+  background: #d9534f;
+}
+.assistance{
+  background: #f0ad4e;
+}
+
+.offline {
+  opacity:0.4;
+}
+
+.img-circle{
+  opacity:0.7;
+}
+
+h3,h4{
+  color: grey !important;
+}
+
+.set-width {
+  max-width:50px;
+}
+.cell div{
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+.popover-content {
+  white-space:pre-wrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+.search-symbol {
+  padding: 8px 12px;
+  border-radius: 0px;
+  border-width: 0px;
+  color: rgb(119, 119, 119);
+  background-color: rgb(248, 248, 248);
+  border-color: rgb(231, 231, 231);
+  box-shadow: none;
+  outline: none;
+}
+
+.bubble-left, .bubble-left-announcement{
+  background-color: #F2F2F2;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #B2B2B2;
+  padding: 10px ;
+  vertical-align: top;
+  border-color: #cdecb0;
+}
+.bubble-left{
+  margin: 10px 20% 10px 0px; 
+}
+.bubble-left-announcement{
+  margin: 10px 5% 10px 5%; 
+}
+.bubble-right, .bubble-right-announcement{
+  background-color: #dfeecf;
+  border-radius: 5px;
+  box-shadow: 0 0 6px #B2B2B2;
+  padding: 10px 18px;
+  position: relative;
+  vertical-align: top;
+  border-color: #cdecb0;
+}
+.bubble-right{
+  margin: 10px 0px 10px 20%; 
+}
+.bubble-right-announcement{
+  margin: 10px 5% 10px 5%; 
+}
+
+/* Changes by Vishal */
+#wall {
+	margin-top: 30px;
+}
+
+/* Changes by Vishal */
+#myself {
+	margin-top: 50px;
+}
+
+.user-row {
+  margin-bottom: 14px;
+/*   width:  250px;
+  height: 80px;
+ */	margin-top: -20px;
+}
+
+.user-row:last-child {
+  margin-bottom: 0;
+}
+                                  
+.user-info {
+  margin-bottom: 20px;
+}
+.dropdown-user {
+  margin: 13px 0;
+  padding: 0px;
+  height: 100%;
+  position: relative;
+  left: 50px;
+}
+
+.cl_btn
+{
+	border-radius: 5px;
+}
+
+
+#img_status
+{
+ 	position: relative;
+	left: 10%;
+	top: -5px; 
+}
+
+#d_post
+{
+	text-align: center;
+	postiton: relative;
+	top: 10px;
+}
+
+#btn_postwall
+{
+	position: relative;
+	top: -20px;
+	left: 20px;
+	border-radius: 5px;
+	background-color: white;	
+}
+
+#ta_postwall
+{
+	resize: none;
+}
+
+#a_post
+{
+	text-align: center;
+	postiton: relative;
+	top: 35px;
+}
+
+#btn_postAnnouncement
+{
+	position: relative;
+	top: -20px;
+	left: 20px;
+	border-radius: 5px;
+	background-color: white;	
+}
+
+#ta_postAnnouncement
+{
+	resize: none;
+}
+
+table {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 80%;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+table td,th {
+	font-size: 1em;
+	text-align:center;
+	border: 1px solid #ADD8E6;
+	padding: 3px 7px 2px 7px;
+	height: 50px;
+}
+
+table th {
+	font-size: 1.1em;
+	padding-top: 5px;
+	padding-bottom: 4px;
+	background-color: #87CEEB;
+	color: #ffffff;
+}
+
+table tr.alt td {
+	color: #000000;
+	background-color: #F0FFFF;
+}
+
+/* Changes by Vishal */
+#participants_online {
+	margin-top: 20px;
+}
+
+/* Changes by Vishal */
+.row {
+	padding: 19px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+	box-shadow: 5px 5px 5px #c0c0c0;
+}
+
+/* Changes by Vishal */
+#participants_online .row {
+	box-shadow: none;
+}
+
+#participants_offline .row {
+	box-shadow: none;
+}
+
+#chatList .row {
+	box-shadow: none;
+}

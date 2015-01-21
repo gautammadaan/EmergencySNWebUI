@@ -1,0 +1,27 @@
+doctype html
+html
+	include includes/head.jade
+	script(src='/js/public_wall.js')
+	head
+	body
+		include includes/navbar.jade
+		input(class = 'hidden' id = 'user_name'  value = user_name)
+		br
+		div.container#announcementInput
+			div.col-xs-12.col-sm-12.col-md-12.col-lg-12#a_post
+			<form id='a_post' action='/postAnnouncement' method='post'>
+			<textarea id="ta_postAnnouncement" name="ta_postAnnouncement" cols="50" rows="2" maxlength="150" placeholder="Post an announcement...150 characters" autofocus="autofocus"></textarea>
+			<button type="submit" id ="btn_postAnnouncement">Share</button> 
+			</form>
+		div.container
+			div.col-xs-12.col-sm-12.col-md-12.col-lg-12#d_post
+				<form id='f_post' action='/postWall' method='post'>
+				<textarea id="ta_postwall" name="ta_postwall" cols="50" rows="2" maxlength="150" placeholder="Post a message...150 characters" autofocus="autofocus"></textarea>
+				<button type="submit" id ="btn_postwall">Share</button> 
+				</form>
+			br
+			br
+			br
+			div#announcement
+			div#wall
+
